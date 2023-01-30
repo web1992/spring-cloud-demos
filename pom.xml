@@ -17,6 +17,7 @@
 	<modules>
 		<module>com.gbdfn.demo-client</module>
 		<module>com.gbdfn.demo-service</module>
+		<module>com.gbdfn.demo-consumer</module>
 	</modules>
 	<properties>
 		<java.version>17</java.version>
