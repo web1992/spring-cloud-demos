@@ -1,29 +1,30 @@
-package com.gbdfn.springcloud.springclouddemos;
+package com.gbdfn.springcloud.consumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @link {http://127.0.0.1:1122/hello}
+ * @link {http://127.0.0.1:5500/consumerHello}
  */
 @RestController
 @Slf4j
 public class ConsumerController {
-    @Autowired
-    private DiscoveryClient client;
+
+    @Value("${serviceName}")
+    private String serviceName;
 
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/consumer", method = RequestMethod.GET)
+    @RequestMapping(value = "/consumerHello", method = RequestMethod.GET)
     public String index() {
 
-        return "FROM HELLO-SERVICE: " + restTemplate.getForEntity("http://HELLO-SERVICE/hello", String.class).getBody();
+        return "FROM " + serviceName + ": " + restTemplate.getForEntity("http://" + serviceName + "/hello", String.class).getBody();
 
     }
 }

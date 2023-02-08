@@ -1,4 +1,4 @@
-package com.gbdfn.springcloud.springclouddemos;
+package com.gbdfn.springcloud.demo.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

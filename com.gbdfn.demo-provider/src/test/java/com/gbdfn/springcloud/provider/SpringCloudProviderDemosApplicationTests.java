@@ -1,10 +1,10 @@
-package com.gbdfn.springcloud.springclouddemos;
+package com.gbdfn.springcloud.provider;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringCloudClientDemosApplicationTests {
+class SpringCloudProviderDemosApplicationTests {
 
 	@Test
 	void contextLoads() {
